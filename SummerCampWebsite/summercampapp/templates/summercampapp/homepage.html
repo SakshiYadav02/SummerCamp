@@ -1,0 +1,537 @@
+{% extends 'summercampapp/mainfile.html'%}
+
+{% block title %}
+SummerCamp
+{% endblock %}
+{% block css %}
+
+.video-fluid{
+width:100%;
+height:100%;
+}
+.carousel-inner{
+width: 100%;
+height:50vw;
+position: relative;
+}
+.carousel{
+position: relative;
+}
+.video1::-webkit-media-controls {
+  display: none;
+}
+.carousel-caption {
+position: absolute;
+z-index:1;
+font-family: 'Zilla Slab Highlight';
+margin-bottom:14vw;
+margin-left:6vw;
+
+}
+.carousel-caption p{
+text-align: left;
+font-size: 4vw;
+font-weight:200;
+color: white;
+}
+
+.card p{
+    margin-top: 7vw;
+    margin-bottom: 7vw;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    text-align: left;
+    font-family: 'Zilla Slab Highlight', cursive;
+    font-size: 2.25vw;
+    color:#61000d;
+}
+
+
+.campus h2{
+text-align:center;
+font-family:'Permanent Marker';
+font-size: 3.50vw;
+color:#61000d;
+}
+
+.col_campus{
+text-align: left;
+font-family: cursive;
+font-size: 1.80vw;
+color: #61000d;
+font-weight: 200;
+background-color: aliceblue;
+display: flex;
+flex-direction: column;
+flex-wrap: wrap;
+align-content: center;
+justify-content: center;
+align-items: center;
+}
+
+.programs h2{
+text-align:center;
+font-family:'Permanent Marker';
+font-size: 3.50vw;
+color:#61000d;
+}
+.firstimgbox{
+margin-left:2vw;
+}
+.firstimgbox img{
+border-radius:2vw;
+width:55vw;
+height:40vw;}
+
+.programs .card{
+border-radius:2vw;
+height:45vw;
+margin-top: -8vw;
+z-index: -10;
+background-color:#fffcf4;
+}
+.programs .card .secondimgbox img{
+border-radius:2vw;
+margin-left:2vw;
+margin-top:5vw;
+width:42vw;
+height:30vw;
+}
+
+.programs .content{
+margin-left: 48vw;
+margin-top: -31vw;
+margin-bottom: 4vw;
+width: 30vw;
+height: 38vw;
+}
+.contentbox{
+margin: 2vw;
+padding: 2vw;
+font-size: 1.50vw;
+font-family: cursive;
+font-weight: 600;
+color:#61000d;
+background-color: aliceblue;
+}
+.contentbox h3{
+font-size: 2.50vw;
+font-family: 'Permanent Marker';
+margin: 0;
+color:#61000d;
+}
+#marqueetag{
+width: 20vw;
+height: 20vw;
+margin-bottom: -22vw;
+margin-top: 5vw;
+}
+#marqueetag .card{
+background-color: #fffcf4;
+width: 50.75vw;
+height: 10vw;
+padding: 2vw;
+font-size: 1.25vw;
+font-family: cursive;
+font-weight: 500;
+color:#61000d;
+}
+#marqueetag .card h3{
+font-family: 'Permanent Marker';
+font-size:2vw;
+}
+.programs .btn-primary {
+color: #fff;
+background-color: #16969d;
+border:none;
+margin-top: -13vw;
+margin-left: 16.5vw;
+width: 22vw;
+}
+.events h2{
+text-align:center;
+font-family:'Permanent Marker';
+font-size: 3.50vw;
+color:#61000d;
+}
+.events .container .card{
+margin: 2vw;
+    padding: 4vw;
+    text-align: center;
+    font-size: 2.25vw;
+    font-family: cursive;
+    background-color: #fffcf4;
+    border-radius: 1vw;
+color:#61000d;
+}
+.events .dots1{
+width: 17vw;
+    height: 14vw;
+    margin-top: -3vw;
+    margin-left: -9vw;
+    margin-bottom: -10vw;
+    background-image: radial-gradient(rgb(237, 36, 36) 2.5px, transparent 3px);
+    background-size: 23px 23px;
+    background-position: 0px 0px, 23px 23px;
+    background-repeat: repeat;
+}
+.events .dots2{
+width: 17vw;
+    height: 14vw;
+    margin-left: 65vw;
+    margin-top: -8vw;
+    background-image: radial-gradient(rgb(237, 36, 36) 2.5px, transparent 3px);
+    background-size: 23px 23px;
+    background-position: 0px 0px, 23px 23px;
+    background-repeat: repeat;
+}
+.events .c2{
+padding-top: 3vw;
+    padding-right: 6vw;
+    padding-left: 6vw;
+    height: 45vw;
+}
+.events .carousel {
+    position: relative;
+    height: 41vw;
+}
+.events .carousel-inner {
+    width: 100%;
+    height: 41vw;
+}
+.events .btn-primary{
+color: #fff;
+    background-color: #16969d;
+    border: none;
+    margin-left: 35vw;
+    width: 29vw;
+    margin-bottom: 3vw;
+}
+.feedback{
+margin-top:4vw;
+}
+
+.feedback h2{
+text-align:center;
+font-family:'Permanent Marker';
+font-size: 3.50vw;
+color:#61000d;
+}
+.feedback .container{
+padding: 2vw;
+    height: 31vw;
+}
+.feedback .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    height: 27vw;
+}
+.feedback .card{
+    margin: 1.25vw;
+    padding: 1.25vw;
+    height: 25vw;
+    font-size: 1.25vw;
+    font-family: cursive;
+    color: #61000d;
+}
+.feedback .card-body{
+    min-height: 1px;
+    padding: 1vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+.feedback .btn-primary{
+    color: #fff;
+    background-color: #16969d;
+    border: none;
+    margin-left: 35vw;
+    margin-top: 3vw;
+    margin-bottom: 2vw;
+    width: 29vw;
+}
+.feedback .dots1{
+    width: 18vw;
+    height: 15vw;
+    margin-top: -5vw;
+    margin-left: -10vw;
+    margin-bottom: -10vw;
+    background-image: radial-gradient(rgb(237, 36, 36) 2.5px, transparent 3px);
+    background-size: 23px 23px;
+    background-position: 0px 0px, 23px 23px;
+    background-repeat: repeat;
+}
+.feedback .dots2{
+    width: 18vw;
+    height: 15vw;
+    margin-left: 63vw;
+    margin-top: -9vw;
+    background-image: radial-gradient(rgb(237, 36, 36) 2.5px, transparent 3px);
+    background-size: 23px 23px;
+    background-position: 0px 0px, 23px 23px;
+    background-repeat: repeat;
+}
+.employment h2{
+margin-bottom:3vw;
+text-align:center;
+font-family:'Permanent Marker';
+font-size: 3.50vw;
+color:#61000d;
+}
+.employment .img1 img{
+vertical-align: middle;
+    border-style: none;
+    width: 50vw;
+    border-radius: 1vw;
+}
+.employment .img1{
+margin-left:5vw;
+}
+.employment .img2 img {
+    vertical-align: middle;
+    border-style: none;
+    width: 41vw;
+    border-radius: 1vw;
+}
+.employment .img2{
+margin-left: 7vw;
+    margin-top: -2vw;
+}
+.employment .img3 img {
+    vertical-align: middle;
+    border-style: none;
+    width: 50vw;
+    border-radius: 1vw;
+}
+.employment .img3{
+margin-top: -40vw;
+margin-left: 47vw;
+margin-bottom: 10vw;
+}
+.employment .second{
+    font-size: 1.20vw;
+    font-family: cursive;
+    color: #61000d;
+    background-color: aliceblue;
+    padding-right: 2vw;
+    padding-bottom: 1vw;
+    padding-left: 2vw;
+    padding-top: 1vw;
+}
+.employment .first{
+background-color: white;
+}
+.employment h3 {
+    font-size: 2.90vw;
+    font-family: Segoe Script;
+    color: #61000d;
+    font-weight: bolder;
+    padding-top: 1.50vw;
+}
+.employment .btn-primary{
+margin-left: 15vw;
+margin-top: 1vw;
+width: 29vw;
+border:none;
+background-color:#16969d;
+}
+
+.btn:hover{
+background-color:#e3c1cf;
+color:white;
+}
+<!--.btn:focus{-->
+<!--outline:none;-->
+<!--}-->
+
+{% endblock %}
+{% block body %}
+{% load static %}
+
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <video class="video-fluid z-depth-1 video1" autoplay loop controls muted>
+        <source src="../static/summercampapp/images/slide6.mp4" type="video/mp4" />
+      </video>
+        <div class="carousel-caption">
+            <p>Ready <br>For Summers?</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<br>
+<br>
+<div class="container" style="height: 100;">
+    <div class="card" style="height: 100;">
+    <p>Summer camp is an amazing,exciting,non-stop,unplugged,outdoors,stay-up-late,try-new-things,grow-an-inch experience!Kids don't know the half of what's waiting for them,but they can't wait to get to camp. </p>
+    </div>
+</div>
+
+
+<br>
+<div class="campus">
+    <h2>Our Campus View</h2>
+    <div class="container">
+      <div class="row">
+          <div class=" col-md-4 col_campus">
+                  We have well-trained, caring adults able to guide kids through conflict, providing opportunities to practice communication, empathy and compassion – key components of maintaining positive relationships.
+          </div>
+          <div class=" col-md-8 col_video">
+              <video class="video-fluid z-depth-1 video2" controls>
+                    <source src="../static/summercampapp/images/pexels.mp4" type="video/mp4" />
+              </video>
+          </div>
+      </div>
+    </div>
+</div>
+<br>
+
+
+<br>
+<div class="programs">
+    <h2>Programs We Organise</h2>
+    <div class="container" id="marqueetag">
+    <marquee direction="up" behavior="scroll" scrollamount="10" width="1000%" height="350" >
+        <div class="card" >
+            <h3>Fun Things</h3>
+            Making shadow puppets,Playing flashlight tag,Playing dark room,Stargazing,Releasing sky lanterns,and more...
+        </div>
+        <marquee direction="up" behavior="scroll" scrollamount="10" width="1000%" height="200" ></marquee>
+        <div class="card">
+            <h3>Entertainment</h3>
+            Going for a nature walk,Cooking on bonfire,Watching animals,Tell stories by the fire,Playing board games,Make leaf prints and more...
+        </div>
+        <marquee direction="up" behavior="scroll" scrollamount="10" width="1000%" height="200" ></marquee>
+        <div class="card">
+            <h3>Activites</h3>
+            Arts and crafts,Abacus,Dance and Music,Bicycling,Adventure and more...
+        </div>
+    </marquee>
+    </div>
+    <div class="firstimgbox">
+        <img src="../static/summercampapp/images/painting.jpg" />
+    </div>
+    <div class="container">
+        <div class="card">
+        <div class="secondimgbox">
+            <img src="../static/summercampapp/images/swim.jpg" />
+        </div>
+        <div class="card content">
+            <div class="contentbox">
+                <h3>Summer Programs</h3>
+                A perfect summer program to match your child's age and interest, including coding, art skills, origami, film studio, martial arts and more.Whether on-campus or online camps, kids have the opportunity to socialize with new and old friends in a safe and healthy environment.
+            </div>
+        </div>
+    </div>
+    </div>
+         <a class="btn btn-primary btn-sm " href="{{'program_details'}}" role="button" aria-pressed="true" >Find Out More</a>
+</div>
+
+
+
+<br>
+<div class="events">
+    <h2>City Events</h2>
+    <div class="container c1">
+        <div class="dots1" rows="8" cols="8" ></div>
+        <div class="card">
+             Summer outcamp,Carnival,Summer olympics,Campfire,Gardening days,arts and crafts festival,magic show,circus,fashion show and more...
+        </div>
+        <div class="dots2" rows="8" cols="8" ></div>
+    </div>
+    <div class="container c2">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <video class="video-fluid z-depth-1 video1" autoplay loop controls muted>
+        <source src="../static/summercampapp/images/2.mp4" type="video/mp4" />
+      </video>
+    </div>
+    <div class="carousel-item">
+      <video class="video-fluid z-depth-1 video1" autoplay loop controls muted>
+        <source src="../static/summercampapp/images/fair.mp4" type="video/mp4" />
+      </video>
+    </div>
+    <div class="carousel-item">
+      <video class="video-fluid z-depth-1 video1" autoplay loop controls muted>
+        <source src="../static/summercampapp/images/6.mp4" type="video/mp4" />
+      </video>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+</div>
+    <a class="btn btn-primary btn-sm" href="{{'cityevent'}}" role="button" aria-pressed="true" >Find Out More</a>
+</div>
+
+
+<div class="employment">
+    <h2>Our Staff</h2>
+        <div class="img1">
+            <img src="../static/summercampapp/images/wholestaff.jpg" />
+        </div>
+        <div class="img2">
+            <img src="../static/summercampapp/images/staffmember.jpg" />
+        </div>
+
+        <div class="img3">
+            <img src="../static/summercampapp/images/group.jpg" />
+        </div>
+        <div class="container first" >
+            <h3>Job Vacancies</h3>
+        {% for j in job %}
+            <div class="container second">
+            Job Id:{{j.JobId}}<br>
+            Post Name:{{j.PostName}}<br>
+            No Of Seats:{{j.NoOfSeats}}<br>
+            Last Date To Apply:{{j.LastDateToApply}}<br>
+            Post Date:{{j.PostDate}}<br>
+            Description:{{j.Description}}</div>
+        {% endfor %}
+        </div>
+    <a class="btn btn-primary btn-sm" href="{{'contact'}}" role="button" aria-pressed="true" >Join Our Team</a>
+</div>
+
+
+
+
+
+<div class="feedback">
+    <h2>Parents love us!</h2>
+    <div class="container">
+        <div class="dots1" rows="8" cols="8" ></div>
+        <div class="row">
+            {% for f in feed|slice:"3" %}
+            <div class="col-sm-4 col-md-4" style="height: 100%; width: 33.3333%">
+                <div class="card">
+                    <div class="card-body">
+                        &ldquo;{{f.FeedbackText}}&rdquo;
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    <div class="dots2" rows="8" cols="8" ></div>
+    </div>
+
+    <a class="btn btn-primary btn-sm" href="{{'feedback'}}" role="button" aria-pressed="true" >Give Your Feedback</a>
+</div>
+
+
+
+{% endblock %}

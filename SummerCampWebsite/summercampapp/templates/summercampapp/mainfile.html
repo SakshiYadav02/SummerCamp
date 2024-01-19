@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Trade+Winds&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="{%static 'summercampapp/images/summercamp.webp' %}">
+    <link rel="shortcut icon" type="image/x-icon" href="{%static 'summercampapp/images/tent.png' %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab+Highlight&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <title>
+        {% block title %}
+
+        {% endblock %}
+    </title>
+    <style>
+body{
+background-color:#fff8ea;
+overflow-x:hidden;
+}
+
+a:hover{color:white;}
+
+.navbar .nav-link:hover {
+  background-color: #e3c1cf;
+}
+
+#msg{
+margin-top:6vw;
+margin-bottom:-4vw;
+}
+.navbar {
+    position:fixed;
+    top:0;
+    background: rgba(0, 0, 0,0.70) ;
+    width:100%;
+    padding:1.20vw;
+}
+.navbar-nav{
+    margin-left: auto;
+}
+.navbar-brand {
+    color: #fff;
+    font-family:Segoe Script;
+}
+.navbar-nav .nav-link {
+    color:  #fff;
+    margin: 0;
+    font-family:Segoe Script;
+    font-size: 1.25vw;
+    font-weight: bolder;
+}
+.navbar-toggler-icon {
+    background-image: url(../static/summercampapp/images/menu-bar.png);
+    height:3.70vw;
+    width:3.70vw;
+}
+#menu-bar li a{
+display: flex;
+justify-content: center;
+}
+.contact{
+background-color:#29070cf2;
+}
+
+.contact ul{
+color:white;
+margin-top: 0;
+margin-bottom: auto;
+margin-left: 27vw;
+font-family: serif;
+font-size: 1.40vw;
+padding-top: 4vw;
+padding-right: 4vw;
+padding-bottom: 1vw;
+padding-left: 4vw;
+}
+.contact a{
+color: #ffffff;
+text-decoration: none;
+background-color: transparent;
+}
+.follow{
+color: white;
+    font-family: serif;
+    font-size: 1.40vw;
+    margin-left: 35vw;
+}
+        {% block css %}
+        {% endblock %}
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg fixed-top">
+  <a class="navbar-brand" >
+    <img src="../static/summercampapp/images/tent.png" width="40" height="28" class="d-inline-block align-top" alt="">
+      <b>SummerCamp</b>
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu-bar" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="menu-bar">
+    <ul class="navbar-nav" >
+      <li class="nav-item active">
+        <a class="nav-link" href="{{'homepage'}}">Home<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{'program_details'}}">ProgramDetails </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{'cityevent'}}">CityEvent</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{'feedback'}}">Feedback</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{'about'}}">AboutUs</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{'contact'}}">ContactUs</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+{% for message in messages %}
+<div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert" id="msg">
+  <strong>Message:</strong> {{message}}
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+{% endfor %}
+
+{% block body %}
+{% endblock %}
+
+<br>
+<div class="contact">
+    <div class="container" style="margin-left:8vw;">
+            <ul type="none">
+                <li><i class="bi bi-telephone"></i>&nbsp&nbsp<a href="tel:+910095100959">Phone no.:0095100959</a></li>
+                <li><i class="bi bi-envelope"></i>&nbsp&nbsp<a href="mailto:sy58281@gmail.com">Gmail Address:sy58281@gmail.com</a></li>
+                <li><i class="bi bi-instagram"></i>&nbsp&nbspInstagram:summer_camp</li>
+                <li><i class="bi bi-facebook"></i>&nbsp&nbspFacebook:summer_camp</li>
+            </ul>
+        <div class="follow">&nbsp&nbsp&nbspFollow us on<br>
+            <i class="bi bi-instagram"></i>&nbsp&nbsp&nbsp&nbsp
+            <i class="bi bi-facebook"></i>&nbsp&nbsp&nbsp&nbsp
+            <i class="bi bi-twitter"></i>&nbsp&nbsp&nbsp&nbsp
+            <i class="bi bi-youtube"></i>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+

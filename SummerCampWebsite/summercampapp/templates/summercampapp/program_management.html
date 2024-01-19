@@ -1,0 +1,141 @@
+{% extends 'summercampapp/mainfile.html'%}
+
+{% block title %}
+SummerCamp
+{% endblock %}
+{% block css %}
+body{
+
+}
+.offline{
+margin-top: 5vw;
+}
+.online{
+margin-top: -15vw;
+}
+.main .offline h2{
+font-size: 3vw;
+    font-family: 'Permanent Marker';
+    color: #61000d;
+}
+.main .online h2{
+font-size: 3vw;
+    font-family: 'Permanent Marker';
+    color: #61000d;
+margin-top:20vw;
+}
+.main .offline_data{
+font-size: 1.50vw;
+    font-family: cursive;
+    color: #61000d;
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+    background-color: white;
+padding: 4vw;
+margin-right: 20vw;
+}
+.main .online_data{
+font-size: 1.50vw;
+    font-family: cursive;
+    color: #61000d;
+    margin-bottom: 2vw;
+    background-color: white;
+padding: 4vw;
+margin-right: 20vw;
+}
+.details .img1 img{
+vertical-align: middle;
+    border-style: none;
+    width: 42vw;
+    height: 28vw;
+    border-radius: 1vw;
+    margin-top: 7vw;
+}
+.details .img1{
+margin-left: 8vw;
+}
+
+.details .img2 img {
+    vertical-align: middle;
+    border-style: none;
+    width: 45vw;
+    border-radius: 1vw;
+}
+.details .img2{
+margin-left: 4vw;
+    margin-top: -2vw;
+}
+.details .img3 img {
+    vertical-align: middle;
+    border-style: none;
+    width: 50vw;
+    border-radius: 1vw;
+}
+.details .img3{
+margin-top: -45vw;
+    margin-left: 48vw;
+    margin-bottom: 15vw;
+}
+
+
+{% endblock %}
+{% block body%}
+{% load static %}
+
+
+
+<div class="details">
+        <div class="img1">
+            <img src="../static/summercampapp/images/9.jpg" />
+        </div>
+        <div class="img2">
+            <img src="../static/summercampapp/images/10.jpg" />
+        </div>
+
+        <div class="img3">
+            <img src="../static/summercampapp/images/14.jpg" />
+        </div>
+</div>
+
+
+
+<div class="main">
+  <div class="container offline">
+    <h2>Offline Programs</h2>
+
+        <div class="offline_data">
+    {% for p in programdetails%}
+      {% if p.TeachingMode == "Offline" %}
+        <h3>{{p.Programid}}...</h3>
+        Program Name:{{p.ProgramName}}<br>
+        Duration:{{p.Duration}}<br>
+        Fees:{{p.Fees}}<br>
+        Start Date:{{p.StartDate}}<br>
+        End Date:{{p.EndDate}}<br>
+        Age Group:{{p.AgeGroup}}<br>
+        Description:{{p.Description}}<br><br>
+      {% endif %}
+    {% endfor %}
+        </div></div>
+
+  <div class="container online">
+    <h2>Online Programs</h2>
+        <div class="online_data">
+
+    {% for p in programdetails%}
+      {% if p.TeachingMode == "Online" %}
+        <h3>{{p.Programid}}...</h3>
+        Program Name:{{p.ProgramName}}<br>
+        Duration:{{p.Duration}}<br>
+        Fees:{{p.Fees}}<br>
+        Start Date:{{p.StartDate}}<br>
+        End Date:{{p.EndDate}}<br>
+        Age Group:{{p.AgeGroup}}<br>
+        Description:{{p.Description}}<br><br>
+      {% endif %}
+    {% endfor %}
+  </div></div>
+</div>
+
+
+{% endblock %}

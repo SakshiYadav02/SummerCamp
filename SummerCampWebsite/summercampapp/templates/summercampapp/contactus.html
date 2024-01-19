@@ -1,0 +1,112 @@
+{% extends 'summercampapp/mainfile.html'%}
+
+{% block title %}
+SummerCamp
+{% endblock %}
+{% block css %}
+
+.w-70 {
+    width: 70%!important;
+    margin-top: 8vw;
+    padding: 5vw;
+    color: #61000d;
+    background-color:white;
+}
+h3{
+font-size: 3.25vw;
+    font-family: Segoe Script;
+    font-weight: bolder;}
+
+form{
+padding: 2vw;
+    font-family: cursive;
+    font-size: 1.50vw;}
+
+.btn-primary {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+    width: 25vw;
+    margin-left: 14vw;
+    font-size: 1.50vw;
+    margin-top:3vw;
+    font-family:Segoe Script;
+}
+
+
+
+{% endblock %}
+{% block body %}
+{% load static %}
+
+
+<div class="container w-70 bg-aliceblue">
+  <h3 style="text-align:center;" class="txt">ContactUs Form</h3>
+<form class="needs-validation" novalidate action="/summercampapp/contact" method="post">
+    {% csrf_token %}
+    <div class="container">
+
+     <div class="form-group">
+    <label for="username">User Name</label>
+    <input type="text" class="form-control" id="name" name="name" placeholder="Enter Your Name" required>
+  <div class="invalid-feedback">
+      User Name required!
+      </div>
+     </div>
+
+        <div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" class="form-control" id="txtemail" name="txtemail"  placeholder="Enter Your Email" required>
+  <div class="invalid-feedback">
+        Email required!
+      </div>
+        </div>
+
+       <div class="form-group">
+    <label for="phone">Phone</label>
+    <input type="number" class="form-control" id="txtphone" name="txtphone" placeholder="Enter Your Phone No." required>
+  <div class="invalid-feedback">
+        Phone number required!It must be of 10 characters only.
+      </div>
+       </div>
+
+
+  <div class="form-group">
+    <label for="question">Question</label>
+    <textarea class="form-control" rows="5" id="ques" name="ques" required></textarea>
+      <div class="invalid-feedback">
+        Your query required!
+      </div>
+  </div>
+
+    <button type="submit" class="btn btn-primary">SUBMIT</button>
+    </div>
+</form>
+</div>
+
+<script>
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+</script>
+{% endblock %}
+
+
+
+
+

@@ -1,0 +1,102 @@
+{% extends 'summercampapp/mainfile.html'%}
+
+{% block title %}
+SummerCamp
+{% endblock %}
+{% block css %}
+
+video::-webkit-media-controls {
+  display: none;
+}
+.details .img2 video {
+    vertical-align: middle;
+    border-style: none;
+    width: 45vw;
+    border-radius: 1vw;
+}
+.details .img2{
+margin-left: 4vw;
+    margin-top: 7vw;
+}
+.details .img3 video {
+    vertical-align: middle;
+    border-style: none;
+    width: 50vw;
+    border-radius: 1vw;
+}
+.details .img3{
+margin-top: -15vw;
+    margin-left: 48vw;
+    margin-bottom: 6vw;
+}
+
+.card{
+margin: 2vw;
+    padding: 2vw;
+    text-align: left;
+    font-size: 1.25vw;
+    font-family: cursive;
+    background-color: white;
+    border-radius: 1vw;
+color:#61000d;
+}
+.dots1{
+width: 17vw;
+    height: 14vw;
+    margin-top: -3vw;
+    margin-left: -9vw;
+    margin-bottom: -10vw;
+    background-image: radial-gradient(rgb(237, 36, 36) 2.5px, transparent 3px);
+    background-size: 23px 23px;
+    background-position: 0px 0px, 23px 23px;
+    background-repeat: repeat;
+}
+.dots2{
+width: 17vw;
+    height: 14vw;
+    margin-left: 65vw;
+    margin-top: -8vw;
+    background-image: radial-gradient(rgb(237, 36, 36) 2.5px, transparent 3px);
+    background-size: 23px 23px;
+    background-position: 0px 0px, 23px 23px;
+    background-repeat: repeat;
+}
+
+{% endblock %}
+{% block body %}
+{% load static %}
+
+
+<div class="details">
+        <div class="img2">
+            <video class="video-fluid z-depth-1 video1" autoplay loop controls muted>
+        <source src="../static/summercampapp/images/carnival.mp4" type="video/mp4" />
+      </video>
+        </div>
+
+        <div class="img3">
+            <video class="video-fluid z-depth-1 video1" autoplay loop controls muted>
+        <source src="../static/summercampapp/images/girl.mp4" type="video/mp4" />
+      </video>
+        </div>
+</div>
+
+
+
+{% for c in event %}
+    <div class="container">
+        <div class="dots1" rows="8" cols="8" ></div>
+        <div class="card">
+        <h3>{{c.EventId}}...</h3>
+        Event Name:{{c.EventName}}<br>
+        Date:{{c.Date}}<br>
+        City:{{c.City}}<br>
+        Venu Address:{{c.VenuAddress}}<br>
+        Description:{{c.Description}}<br>
+        </div>
+        <div class="dots2" rows="8" cols="8" ></div>
+    </div>
+{% endfor %}
+
+
+{% endblock %}

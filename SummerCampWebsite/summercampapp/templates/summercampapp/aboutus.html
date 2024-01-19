@@ -1,0 +1,49 @@
+{% extends 'summercampapp/mainfile.html'%}
+
+{% block title %}
+SummerCamp
+{% endblock %}
+{% block css %}
+h2{
+font-size: 4vw;
+    text-align: center;
+    font-family: Segoe Script;
+    margin-top: -4vw;
+    margin-bottom: 4vw;
+    color: #61000d;
+    font-weight: bolder;
+}
+p{
+margin-top: 0;
+    margin-bottom: 1rem;
+    padding-left: 4vw;
+    padding-right: 4vw;
+    font-family: cursive;
+    font-size: 1.50vw;
+    color: #61000d;
+}
+.c2{
+padding: 8vw;
+    background-color: white;
+    margin-top: 8vw;
+    margin-right: 8vw;
+    margin-left: 8vw;
+}
+
+
+
+{% endblock %}
+{% block body %}
+{% load static %}
+
+<div class="container c2">
+    <h2>About Us</h2>
+    <p>We are lead by a welcoming and affirming year-round team of seasoned camp professionals. Our summer staff is comprised of returning campers, veteran counselors, experienced coaches, and fresh new staff who join us each year. This dynamic mix invigorates our culture and gives us a relevant, youthful outlook.</p>
+
+    <p>We retain our cherished traditions, while constantly improving our programming and tweaking our practices when change is the better choice. We want the most authentic, impactful, camp experience for our CBS kids.</p>
+
+    <p>We strive to be an environmentally-friendly camp, prioritizing zero-waste practices, and educating our campers in the ways they can be conscious of their environmental footprint. We harvest herbs and vegetables from our on-site garden for our camp cuisine, incorporating a sustainable dining system into our camp programming.</p>
+</div>
+
+
+{% endblock %}
